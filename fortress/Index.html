@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+      <html lang="en">
+       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header con Transiciones</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+  <!-- Link para Boxicons -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+      <header>
+           <div class="logo" a href="">Alejandro</div>
+         <nav>
+             <ul class="nav-links">
+               <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                   <li><a href="#project">project</a></li>
+                      <li><a href="#services">Services</a></li>
+                   <li><a href="#faq">faq</a></li>
+                  <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </header>
+      
+
+
+ 
+  <section id="inicio">
+    <div class="content">
+      <div class="text">
+        <h1>Welcome</h1>
+        <p>Explore endless possibilities with our modern solutions tailored to your needs.</p>
+        <a href="document.html" class="explore-btn">Explore</a>
+      </div>
+      <div class="image">
+        <img src="assest/3103229_855-removebg-preview.png" alt="Illustration">
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="clientes-satisfechos">
+    <div class="grid-item">
+      <div class="perfil">
+        <img src="assest/usuarios/75.jpg" alt="Foto de perfil">
+      </div>
+      <h3>Juan Pérez</h3>
+      <p>"¡El servicio fue increíble! Superó mis expectativas y lo recomendaré a todos mis amigos."</p>
+      <div class="estrellas">
+        ★★★★★
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="perfil">
+        <img src="assest/usuarios/43.jpg" alt="Foto de perfil">
+      </div>
+      <h3>María García</h3>
+      <p>"La atención al detalle fue impresionante, y estoy muy satisfecha con los resultados."</p>
+      <div class="estrellas">
+        ★★★★★
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="perfil">
+        <img src="assest/usuarios/74.jpg" alt="Foto de perfil">
+      </div>
+      <h3>Carlos López</h3>
+      <p>"Gran experiencia, definitivamente regresaré para futuros proyectos. ¡Muy recomendado!"</p>
+      <div class="estrellas">
+        ★★★★★
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  .clientes-satisfechos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .grid-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .perfil img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .estrellas {
+    font-size: 1.2rem;
+    color: #f9d71c;
+  }
+  </style>
+  
+
+
+
+  <section id="sobre-mi">
+    <div class="content">
+      <div class="sobre-mi-container">
+        <div class="sobre-mi-left">
+          <img src="assest/WhatsApp Image 2024-12-19 at 23.18.17-Photoroom.png" alt="About Me Image" class="sobre-mi-img">
+        </div>
+        <div class="sobre-mi-right">
+          <h2>About Me</h2>
+          <p>I'm a passionate developer focused on creating innovative projects with modern technologies. I strive to build impactful solutions while continuously improving my skills.</p>
+  
+          <div class="icons">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js-square"></i>
+            <i class="fab fa-python"></i>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="servicios">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="bx bx-code-alt"></i>
+        <h3>Web Development</h3>
+        <p>Creating stunning and functional websites tailored to your needs.</p>
+      </div>
+      <div class="service-card">
+        <i class="bx bx-shield-quarter"></i>
+        <h3>Cybersecurity</h3>
+        <p>Ensuring your data and applications are safe from potential threats.</p>
+      </div>
+      <div class="service-card">
+        <i class="bx bx-mobile-alt"></i>
+        <h3>Mobile Apps</h3>
+        <p>Developing intuitive and powerful mobile applications for all platforms.</p>
+      </div>
+      <div class="service-card">
+        <i class="bx bx-brain"></i>
+        <h3>AI Solutions</h3>
+        <p>Integrating intelligent systems to enhance your business processes.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="proyectos">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="assest/sitios webs/8487738_3940578.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Amazing description of project 1.</p>
+        <a href="#" class="btn-view">View</a>
+      </div>
+      <div class="project-card">
+        <img src="assest/sitios webs/5890011_3051625.jpg" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>Incredible details about project 2.</p>
+        <a href="#" class="btn-view">View</a>
+      </div>
+      <div class="project-card">
+        <img src="assest/sitios webs/4912325_2532219.jpg" alt="Project 3">
+        <h3>Project 3</h3>
+        <p>Exciting overview of project 3.</p>
+        <a href="#" class="btn-view">View</a>
+      </div>
+      <div class="project-card">
+        <img src="assest/sitios webs/4532.jpg" alt="Project 4">
+        <h3>Project 4</h3>
+        <p>Innovative approach in project 4.</p>
+        <a href="#" class="btn-view">View</a>
+      </div>
+      <div class="project-card">
+        <img src="assest/sitios webs/27616146_7326251.jpg" alt="Project 5">
+        <h3>Project 5</h3>
+        <p>Creative perspective with project 5.</p>
+        <a href="#" class="btn-view">View</a>
+    </div>
+    
+      <div class="project-card">
+        <img src="assest/sitios webs/10367634_4443782.jpg" alt="Project 6">
+        <h3>Project 6</h3>
+        <p>Creative insights into project 6.</p>
+        <a href="#" class="btn-view">View</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-header">
+          <h3 class="faq-question">What is Responsive Web Design?</h3>
+          <i class="faq-icon bx bx-chevron-down"></i>
+        </div>
+        <p class="faq-answer">Responsive Web Design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes, from desktop monitors to mobile phones. It ensures that the layout adjusts automatically to fit the device's screen size.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <h3 class="faq-question">Why is Responsive Design important?</h3>
+          <i class="faq-icon bx bx-chevron-down"></i>
+        </div>
+        <p class="faq-answer">Responsive design ensures a seamless user experience across all devices. With more users accessing websites via smartphones and tablets, a responsive website helps to retain visitors by providing an optimized experience on any screen size.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <h3 class="faq-question">What are Media Queries?</h3>
+          <i class="faq-icon bx bx-chevron-down"></i>
+        </div>
+        <p class="faq-answer">Media queries are a CSS technique used in responsive design to apply different styles depending on the characteristics of the device, such as its screen size, resolution, or orientation. It helps in applying specific styles for mobile, tablet, or desktop screens.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <h3 class="faq-question">How do I create a responsive layout?</h3>
+          <i class="faq-icon bx bx-chevron-down"></i>
+        </div>
+        <p class="faq-answer">To create a responsive layout, you can use a combination of flexible grids, images that resize according to the screen size, and media queries to adjust the layout for different devices. It's important to test your layout on different screen sizes to ensure it adapts properly.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <h3 class="faq-question">What is the role of the viewport in responsive design?</h3>
+          <i class="faq-icon bx bx-chevron-down"></i>
+        </div>
+        <p class="faq-answer">The viewport is the visible area of a web page on a screen. In responsive design, the viewport is controlled using the `<meta>` tag to ensure that the page scales properly on different devices. It defines the width and scaling of the page for mobile devices.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+
+
+
+
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/90881.jpg" alt="Imagen 1">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/18706.jpg" alt="Imagen 2">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/94520.jpg" alt="Imagen 3">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/98295.jpg" alt="Imagen 4">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/103688.jpg" alt="Imagen 5">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/2151645682.jpg" alt="Imagen 6">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/2151645636.jpg" alt="Imagen 7">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/2151645562.jpg" alt="Imagen 8">
+    </div>
+    <div class="gallery-item">
+      <img src="assest/imagenes ia/104079.jpg" alt="Imagen 9">
+    </div>
+  </section>
+  
+  
+  
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-left">
+        <img src="assest/10798281_19362653-Photoroom.png" alt="Contact Image" class="contact-image" />
+      </div>
+      <div class="contact-right">
+        <h2>Contact Me</h2>
+        <p>Let’s build something amazing together. Reach out and I’ll respond as soon as possible!</p>
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <label for="name">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+<!-- Ventana emergente -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>¡Bienvenido a Nuestra Página!</h2>
+    <p>
+      Estamos encantados de que estés aquí. Descubre nuestros servicios y disfruta de una experiencia única. 
+      ¡Haz clic en cerrar para comenzar a explorar!
+    </p>
+    <button id="close-popup" class="btn">Cerrar</button>
+  </div>
+</div>
+
+<!-- Estilos -->
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+  }
+
+  /* Ventana emergente con efecto de fondo blur */
+  .popup {
+    display: flex; /* Visible al cargar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Efecto blur en el fondo */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+  }
+
+  /* Estilo de la ventana emergente */
+  .popup-content {
+    background: #1e3c72; /* Fondo azul oscuro */
+    color: white;
+    padding: 3rem 4rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 550px;
+    width: 90%;
+    transform: scale(0.98);
+    transition: transform 0.3s ease;
+  }
+
+  .popup-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+
+  .popup-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .popup-content .btn {
+    padding: 1rem 2.5rem;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .popup-content .btn:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+  }
+
+  .popup-content .btn:active {
+    transform: translateY(1px);
+  }
+
+  /* Animación de entrada */
+  .popup.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Efecto al abrir */
+  .popup-content.show {
+    transform: scale(1);
+  }
+
+</style>
+
+<!-- JavaScript -->
+<script>
+  // Obtener elementos del DOM
+  const popup = document.getElementById("popup");
+  const closePopup = document.getElementById("close-popup");
+
+  // Mostrar el popup al cargar la página
+  window.onload = () => {
+    popup.classList.add("show");
+    setTimeout(() => {
+      document.querySelector('.popup-content').classList.add('show');
+    }, 100);
+  };
+
+  // Cerrar el popup al hacer clic en el botón
+  closePopup.addEventListener("click", () => {
+    popup.classList.remove("show");
+    setTimeout(() => {
+      popup.style.display = "none";  // Opcional: esconder el popup después del cierre
+    }, 400);
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  if (window.scrollY > 0) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+
+  </script>
+
+  <script>
+
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+}
+
+
+  </script>
+
+
+<script>
+
+
+
+document.querySelectorAll('.faq-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const faqItem = header.parentElement;
+    faqItem.classList.toggle('open');
+  });
+});
+
+
+
+</script>
+
+
+
+<script>
+
+window.addEventListener("load", function () {
+  document.body.classList.add("loaded");
+});
+
+
+</script>
+
+
+
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,1207 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Armata&family=Galdeano&family=Jersey+15&family=Jost:ital,wght@0,100..900;1,100..900&family=Kode+Mono:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #010c3b , #010c3b);
+  height: 120vh;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Header Styles */
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 10;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Efecto box-shadow al hacer scroll */
+header.scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #010e4a;
+
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-left: 25px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 12px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* Transition Effect for Hover */
+nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffc800;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+/* Main Content Styles */
+main {
+  padding-top: 80px;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+main p {
+  font-size: 18px;
+  color: #555;
+}
+
+
+
+/* Sidebar oculto inicialmente */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos para el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 250px;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #010e4a;
+    padding-top: 70px;
+    transform: translateX(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin: 5px auto;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Animaciones del ícono hamburguesa */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+
+
+
+
+/* Sección Inicio */
+#inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  min-height: 120vh;
+  background-color: #010c3b; /* Fondo general */
+}
+
+#inicio .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#inicio .text {
+  flex: 1;
+  max-width: 50%;
+}
+
+#inicio .text h1 {
+  font-size: 3rem;
+  color: #ffcc00; /* Cambia este color si necesitas otro */
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+#inicio .text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-left: 40px;
+}
+
+/* Botón Explore */
+.explore-btn {
+  display: inline-block;
+  margin: 20px 0 0 40px; /* Margen superior para separar del párrafo, alineado con el margen izquierdo del párrafo */
+  background-color: transparent;
+  color: #ffcc00;
+  padding: 12px 30px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: solid #ffc800;
+}
+
+.explore-btn:hover {
+  background-color: #ffdd56;
+  transform: translateY(-2px);
+  color: #010e4a;
+  box-shadow: 0 4px 8px rgba(255, 251, 34, 0.3);
+  border-radius: 16px;
+}
+
+.explore-btn:active {
+  transform: translateY(0);
+}
+
+#inicio .image {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative; /* Necesario para posicionar el neón */
+}
+
+#inicio .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  z-index: 1; /* Asegura que la imagen esté encima del efecto */
+}
+
+/* Efecto de Neón Flotante */
+#inicio .image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 75%;
+  background: linear-gradient(40deg, rgba(108, 0, 135, 0.6), rgba(14, 174, 243, 0.6));
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0; /* Detrás de la imagen */
+  animation: pulse 5s infinite;
+}
+
+/* Animación de pulso para el efecto */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* Responsividad para la sección Inicio */
+@media (max-width: 768px) {
+  #inicio {
+    flex-direction: column; /* Cambiar a columna en lugar de fila */
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  #inicio .content {
+    flex-direction: column; /* Organizar contenido en columna */
+    gap: 20px; /* Espaciado entre texto e imagen */
+  }
+
+  #inicio .image {
+    order: -1; /* Mover la imagen al inicio */
+    max-width: 100%; /* Usar todo el ancho disponible */
+    margin-bottom: 20px; /* Espaciado entre imagen y texto */
+  }
+
+  #inicio .image img {
+    max-width: 80%; /* Reducir tamaño de la imagen */
+    border-radius: 10px;
+    margin-top: 90px;
+  }
+
+  #inicio .text {
+    max-width: 100%; /* Usar todo el ancho disponible */
+    margin: 0 auto; /* Centrar texto */
+  }
+
+  #inicio .text h1 {
+    font-size: 2rem; /* Reducir tamaño del título */
+    margin-left: 0; /* Quitar margen izquierdo */
+  }
+
+  #inicio .text p {
+    font-size: 1rem; /* Reducir tamaño de fuente */
+    margin-left: 0; /* Quitar margen izquierdo */
+  }
+
+  .explore-btn {
+    margin: 20px auto; /* Centrar el botón */
+    font-size: 0.9rem; /* Ajustar tamaño de fuente */
+    padding: 10px 25px; /* Reducir el tamaño del botón */
+  }
+}
+
+
+
+
+
+/* General section styling */
+#sobre-mi {
+  padding: 50px 20px;
+  background-color: #010c3b;
+  color: #fff;
+  position: relative; /* Necesario para posicionar el efecto de neón */
+  overflow: hidden; /* Asegura que el efecto de neón no sobresalga de la sección */
+}
+
+/* Efecto Neón en el fondo */
+#sobre-mi::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(45deg, rgba(0, 128, 255, 0.3), rgba(22, 0, 164, 0.3));
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1; /* Coloca el neón detrás del contenido */
+  animation: pulse 5s infinite; /* Efecto de pulso suave */
+}
+
+/* Animación de pulso para el efecto */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+
+.sobre-mi-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Left side with the image */
+.sobre-mi-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.sobre-mi-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 55px rgba(0, 0, 0, 0.3)); 
+  margin-left: 20px;
+  display: block;
+}
+
+/* Right side with text and logos */
+.sobre-mi-right {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.sobre-mi-right h2 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.sobre-mi-right p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #d1d1d1;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icons i {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  transition: color 0.3s ease;
+}
+
+.icons i:hover {
+  color: #ffc800;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .sobre-mi-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-mi-left, .sobre-mi-right {
+    flex: 1;
+    padding: 0;
+  }
+
+  .sobre-mi-img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .sobre-mi-right h2 {
+    font-size: 2rem;
+  }
+
+  .sobre-mi-right p {
+    font-size: 1rem;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+
+  .icons i {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+/* Estilo General */
+#proyectos {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #010c3b;
+  color: #333;
+  position: relative; /* Necesario para el efecto */
+  overflow: hidden; /* Asegura que el efecto no sobresalga */
+}
+
+/* Efecto Neón en el fondo */
+#proyectos::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(45deg, rgba(43, 255, 0, 0.6), rgba(255, 0, 255, 0.6));
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1; /* Coloca el neón detrás de los elementos */
+  animation: pulse 3s infinite; /* Efecto de pulso */
+}
+
+/* Animación de pulso para el efecto */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+/* Título de la sección */
+#proyectos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffcc00;
+}
+
+/* Grid para los Proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de Proyecto */
+.project-card {
+  background-color: #011568;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0 10px;
+  color: #ffcc00;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0 15px 15px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.project-card .btn-view {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  border: solid 2px #ffcc00;
+}
+
+.project-card .btn-view:hover {
+  background-color: #ffcc00;
+  color: #001986;
+  box-shadow: 0 4px 8px rgba(255, 251, 34, 0.3);
+  border-radius: 15px;
+}
+
+/* Efecto al Pasar el Cursor */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Responsividad para la sección Proyectos */
+@media (max-width: 768px) {
+  #proyectos {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  #proyectos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Las tarjetas se ajustan dinámicamente */
+    gap: 20px; /* Espaciado entre las tarjetas */
+  }
+
+  .project-card {
+    background-color: #1e1e2f;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .project-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .btn-view {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #010e4a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn-view:hover {
+    background-color: #ffdd56;
+    transform: translateY(-2px);
+  }
+
+  .btn-view:active {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* Estilo General */
+#servicios {
+  padding: 50px 20px;
+  background-color:  #010c3b;
+  text-align: center;
+  color: #333;
+}
+
+#servicios h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffcc00;
+}
+
+/* Grid de Servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de Servicio */
+.service-card {
+  background-color:  #001367;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: #d9d200;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #ffffff;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Efectos al Pasar el Cursor */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover i {
+  color: #ff5722;
+}
+
+
+/* Responsividad para la sección Servicios */
+@media (max-width: 768px) {
+  #servicios {
+    padding: 30px 15px;
+    text-align: center; /* Centrar el contenido */
+  }
+
+  #servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-direction: column; /* Colocar las tarjetas en columna */
+    gap: 20px; /* Espaciado entre las tarjetas */
+  }
+
+  .service-card {
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px); /* Efecto de hover para mover las tarjetas */
+  }
+
+  .service-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+}
+
+
+/* Estilos para la sección de Preguntas y Respuestas */
+#faq {
+  padding: 40px 20px;
+  background-color: #010c3b;
+  color: #fff;
+  text-align: center;
+}
+
+#faq h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  max-width: 800px; /* Tamaño reducido para centrado */
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: #1e2a47;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  margin: 0;
+  font-weight: 600;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #ffcc00;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg); /* Giro del ícono al abrir */
+}
+
+.faq-answer {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d1d1d1;
+  display: none;
+  margin-top: 10px;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* Efecto al hacer clic en la pregunta */
+.faq-item.open .faq-question {
+  color: #ffc800;
+}
+
+/* Estilos para responsividad */
+@media (max-width: 768px) {
+  #faq h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px; /* Espaciado entre los elementos */
+  padding: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para un efecto elegante */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Intensifica la sombra */
+}
+
+.gallery-item img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 100%; /* La imagen ocupa todo el alto del contenedor */
+  object-fit: cover; /* Recorta la imagen para ajustarla al contenedor */
+  transition: transform 0.3s ease; /* Animación al pasar el mouse */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Amplía la imagen ligeramente al pasar el mouse */
+}
+
+/* Estilos básicos para el fondo de la animación de carga */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db; /* Color azul para la animación */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite; /* Animación de rotación */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ocultar la animación cuando la página haya cargado */
+body.loaded .loader-wrapper {
+  display: none;
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background-color: #010c3b;
+  color: #333;
+}
+
+.contact-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+
+ }
+
+.contact-right {
+  flex: 1;
+}
+
+.contact-right h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+.contact-right p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+/* Contact Form */
+.contact-form {
+  display: grid;
+  gap: 25px;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #0300b5;
+  border-radius: 5px;
+  background-color: #010c3b;
+  transition: all 0.3s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background-color: #01104f;
+  padding: 0 5px;
+  font-size: 0.9rem;
+  color: #e6e7e8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0078d4;
+  outline: none;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  color: #0078d4;
+  font-size: 0.8rem;
+}
+
+.submit-btn {
+  background-color: transparent;
+  color: white;
+  padding: 15px 30px;
+  border: solid 2px #0300b5;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ffc800;
+  transform: translateY(-2px);
+  color: #001055;
+  box-shadow: 0 4px 8px rgba(255, 251, 34, 0.3);
+  border-radius: 15px;
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+
+/* Responsividad para la sección Contacto */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 30px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left {
+    flex: 1;
+    margin-bottom: 30px;
+    padding-right: 0;
+  }
+
+  .contact-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .contact-right {
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .contact-right h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-right p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  /* Formulario de contacto */
+  .contact-form {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+
+
+
+
+
+/* Estilos generales para el footer */
+#footer {
+  background-color: #001055; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-links {
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffcc00; /* Color al pasar el mouse */
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0078d4; /* Color al pasar el mouse */
+}
+
+/* Para evitar que el footer quede encima del contenido */
+body {
+  padding-bottom: 100px; /* Ajusta según el tamaño de tu footer */
+}
+
+/* Para el contenido principal (main) */
+main {
+  padding-bottom: 100px; /* Asegura que el contenido no se superponga con el footer */
+}
+
+
+
+
+
+
+/* Estilo General para el Scroll */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #333; /* Color de la pista */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #001986; /* Color del pulgar (parte móvil) */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre el pulgar */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffcc00; /* Cambio de color cuando el cursor está sobre el pulgar */
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #333; /* Color de la esquina de la barra de scroll */
+}
